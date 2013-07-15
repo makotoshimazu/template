@@ -1,0 +1,196 @@
+% documentclass
+% 奥村さんのjsarticle
+% 他にはjsbook, jreport, thesis等。違いは自分で調べましょう
+\documentclass{jsarticle}
+% \documentclass{jarticle}
+% 余白
+\oddsidemargin -3.0mm
+\evensidemargin -3.0mm
+\textwidth 160mm
+\textheight 250mm
+\topmargin -15mm
+\columnsep 10mm
+
+%ステータス設定
+\newcommand{\templatetitle}{sample}
+\newcommand{\templateauthor}{yourname}
+
+% 画像基本
+\usepackage[dvipdfm]{graphicx,color}
+
+% 図をまわりこんだ文章を書きたいとき
+%\usepackage{wrapfig}
+
+% 数学関連
+\usepackage{amsmath,amssymb,amsthm,bm}
+
+
+% 文字化け防止設定
+\usepackage{atbegshi}
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+
+% ハイパーリンク
+\usepackage[dvipdfmx          
+,colorlinks=true,linkcolor=blue        % リンクの色
+,bookmarks=true,bookmarksnumbered=true  % しおり
+,pdftitle={\templatetitle},pdfauthor={\templateauthor}      % 作者情報
+]{hyperref}
+% しおりを使うときはこれも有効にする
+% \AtBeginDvi{\special{pdf:tounicode EUC-UCS2}} % EUC
+% \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} % Shift_JIS
+
+% minipage
+\usepackage{boxedminipage}
+
+% 多段組み
+%\usepackage{multicol}
+
+% 目次
+\usepackage{makeidx}
+\makeindex
+
+% 図とcaptionの間隔
+\setlength\abovecaptionskip{0pt}
+\setlength\belowcaptionskip{0pt}
+
+% 図や表のキャプションを無理やり
+% \makeatletter
+
+
+% ewcommand{\figcaption}[1]{\def\@captype{\figure}\caption{#1}}
+
+
+% ewcommand{\tblcaption}[1]{\def\@captype{\table}\caption{#1}}
+% \makeatother
+
+% 絶対値、ノルム
+% \abs{v}, orm{u}などで呼び出せる
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\orm}[1]{\lVert#1\rVert}
+
+% URLを綺麗に書く
+\usepackage{url}
+
+% ページ番号つけたくないとき
+% \pagestyle{empty}
+% \pagestyle{myheadings}          %自分
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead[\thepage{}/{}\pageref{LastPage}]{\templatetitle}
+\chead[]{}
+\rhead[\templatetitle]{\thepage{}/{}\pageref{LastPage}}
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+
+
+% プログラムのソースをlistingsをつかって書く
+\usepackage{listings,jlisting}
+\usepackage[dvipdfm]{color}
+\renewcommand{\lstlistingname}{list}
+% \lstset{%
+% language={C},
+% backgroundcolor={\color[gray]{.97}},%
+% tabsize=2,%
+% basicstyle={\small},%
+% identifierstyle={\small},%
+% commentstyle={\small},%
+% keywordstyle={\small\bfseries},%
+% ndkeywordstyle={\small},%
+% stringstyle={\small\ttfamily},
+% frame={tb},
+% breaklines=true,
+% columns=[l]{fullflexible},%
+% xrightmargin=0zw,%
+% xleftmargin=0zw,%
+% numberstyle={\footnotesize},%
+% numbers=left,%
+% numbersep=0.2zw,%
+% stepnumber=1,%
+% showstringspaces=false,%
+% lineskip=-0.2ex%
+% }
+
+\lstset{%
+ language={C},
+ backgroundcolor={\color[gray]{.90}},%
+ basicstyle={\footnotesize},%
+ identifierstyle={\footnotesize},%
+ commentstyle={\footnotesize\itshape},%
+ keywordstyle={\footnotesize\bfseries},%
+ ndkeywordstyle={\footnotesize},%
+ stringstyle={\footnotesize\ttfamily},
+ frame={tb},
+ breaklines=true,
+ columns=[l]{fullflexible},%
+ numbers=left,%
+ xrightmargin=0zw,%
+ xleftmargin=1zw,%
+ numberstyle={\scriptsize},%
+ stepnumber=1,
+ numbersep=0.5zw,%
+ lineskip=-0.5ex%
+}
+% 同一ページで段組をかえる
+\usepackage{multicol}
+
+% 枠組
+\usepackage{ascmac}
+
+% 表を思った位置に
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% タイトル
+\title{\templatetitle}
+\author{\templateauthor}
+\date{\today}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% タイトル書く
+\maketitle
+
+
+% 目次
+% \tableofcontents
+% 図一覧
+%\listoffigures
+% 表一覧
+%\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% 各種サンプル
+% 
+
+% listingサンプル
+% \lstinputlisting[caption=fuga,label=lst:fuga]{./source/fuga.c}
+
+% figureサンプル
+% \begin{figure}[H]
+% \begin{minipage}{0.5\hsize}
+%  \begin{center}
+%  \includegraphics[scale=1.0]{./figures/hoge1.eps}
+%  \caption{hoge1}
+%  \label{fig:hoge1}
+% \end{center}
+% \end{minipage}
+% \begin{minipage}{0.5\hsize}
+%  \begin{center}
+%  \includegraphics[scale=1.0]{./figures/hoge2.eps}
+%  \caption{hoge2}
+%  \label{fig:hoge2}
+% \end{center}
+% \end{minipage}
+% \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% 本文
+% 
+
+\end{document}
+

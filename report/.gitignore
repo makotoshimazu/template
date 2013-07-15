@@ -1,0 +1,14 @@
+*.aux
+*.dvi
+*.idx
+*.log
+*.out
+*.*~
+*~
+*.o
+*.elf
+*.hex
+GRTAGS
+GSYMS
+GPATH
+GTAGS
