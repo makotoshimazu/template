@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# set as you install this script
+templatedir="TEMPLATEDIR"
+targetdir=`pwd`
+
+VERSION="1.0"
+
+# print usage
+function usage () {
+    echo "Usage:  $0 [-d templatedir] [-f targetdir] [-h] [-v] template" >&2
+    echo -n "template: "
+    echo `ls -F $templatedir | grep / | sed -e 's/\///'`
+}
+
+function version () {
+    echo "template -- version ${VERSION}"
+}
+
+# parse option
+while getopts :d:f:hv opt
+do
+    case $opt in
+        d)
+            templatedir=$OPTARG
+            ;;
+        h)
+            usage
+            exit 0
+            ;;
+        f)
+            targetdir=$OPTARG
+            ;;
+        v)
+            version
+            exit 0
+            ;;
+        ?)
+            echo "$0: Illegal option -$OPTARG" >&2
+            echo ""
+            usage
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+# check # of args
+if [ $# -ne 1 ]; then
+    echo "Specify ONE template: $@"
+    echo ""
+    usage
+    exit 1;
+fi
+
+# set path to template
+template=${templatedir}"/"$1
+if [ ! -d $template ]; then
+    echo "Unknown Template: $template"
+    echo ""
+    usage
+    exit 1
+fi
+
+# check path to target
+if [ ! -d $targetdir ]; then
+    echo "Unknown Target: $targetdir"
+    echo ""
+    usage
+    exit 1
+fi
+
+# copy
+echo "Copy from \"$1\" to \"$targetdir\""
+cp -r $template/* $targetdir
+if [ $? -ne 0 ]; then
+    echo "Copy is failed"
+    exit 1
+else
+    echo "Finished!"
+fi
+
+exit 0
