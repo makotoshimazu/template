@@ -1,6 +1,6 @@
 template
 ========
-__Quickly Start your work. Don't waste your time.__  
+__Let's quickly start your work.__  
 Expand your template files into your current directory.
 
 > template report
