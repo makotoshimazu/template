@@ -25,7 +25,7 @@ cp -r yourtemplate path/to/template
 sudo make install
 ```
 
-4. (For zsh users)
+4. (Only for zsh users) Add completion settings
 ```
 mkdir ~/.zsh.d
 cp /etc/bash_completion.d/template ~/.zsh.d/template-completion.bash
@@ -54,3 +54,11 @@ In this case, templatedir/yourtemplate will be scattered into your current direc
 ```
 template -d templatedir youtemplate
 ```
+
+As you add new template, only copy the template into the directory you cloned, and reinstall.
+```
+cp -r newyourtemplate path/to/template
+cd path/to/template
+sudo make install
+```
+For zsh user, don't have to reinstall the zsh completion file.
