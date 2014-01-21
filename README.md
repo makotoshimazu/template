@@ -8,13 +8,31 @@ Expand your template files into your current directory.
 Install
 -------
 1. Clone this repository
-> git clone https://github.com/amiq11/template.git
+```
+git clone https://github.com/amiq11/template.git
+```
 
-2. Copy your template into cloned directory
-> cp -r yourtemplate yourpath/template
+2. Copy your template into the directory you cloned
+```
+cp -r yourtemplate path/to/template
+```
 
 3. Install
-> sudo make install
+```
+sudo make install
+```
+
+4. (For zsh users)
+```
+mkdir ~/.zsh.d
+cp /etc/bash_completion.d/template ~/.zsh.d/template-completion.bash
+```
+And add the following lines into ~/.zshrc .
+```
+autoload -U bashcompinit
+bashcompinit
+source ~/.zsh.d/template-completion.bash
+````
 
 Usage
 -----
