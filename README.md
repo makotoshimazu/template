@@ -1,9 +1,12 @@
 template
 ========
 __Let's quickly start your work.__  
-Expand your template files into your current directory.
+Expand your template files into your current directory.  
 
-> template report
+To use, only type below.
+```
+template report
+```
 
 Install
 -------
@@ -37,12 +40,17 @@ source ~/.zsh.d/template-completion.bash
 Usage
 -----
 As type this command, yourtemplate will be expanded into your current directory.
-> template yourtemplate
+```
+template yourtemplate
+```
 
 If you want to specify the target directory, use -f option.
-> template -f targetdir yourtemplate
+```
+template -f targetdir yourtemplate
+```
 
 If you want to use another template, use -d option.
 In this case, templatedir/yourtemplate will be scattered into your current directory.
-> template -d templatedir youtemplate
-
+```
+template -d templatedir youtemplate
+```
