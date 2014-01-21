@@ -4,10 +4,11 @@ TEMPLATE_DIR="TEMPLATEDIR"
 
 _template()
 {
+    unalias ls
     case "${COMP_CWORD}" in
         "1")
             COMPREPLY=( $(\
-compgen -W "`find ${TEMPLATE_DIR} -maxdepth 1 -type d -print | sed -e "s%${TEMPLATE_DIR}%%g" | xargs -I% basename %`" \
+compgen -W "`ls ${TEMPLATE_DIR}`" \
                 ${COMP_WORDS[COMP_CWORD]}) )
             ;;
     esac
