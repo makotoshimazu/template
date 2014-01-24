@@ -72,6 +72,8 @@ fi
 
 # copy
 echo "Copy from \"$1\" to \"$targetdir\""
+# enable dotglob (Bash Built-in Command!!)
+shopt -s dotglob
 cp -r $template/* $targetdir
 if [ $? -ne 0 ]; then
     echo "Copy is failed"
