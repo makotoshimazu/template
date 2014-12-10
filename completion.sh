@@ -4,10 +4,10 @@ TEMPLATE_DIR="TEMPLATEDIR"
 
 _template()
 {
-    unalias ls
     case "${COMP_CWORD}" in
         "1")
-            COMPREPLY=( $(compgen -C "ls ${TEMPLATE_DIR}" ${COMP_WORDS[COMP_CWORD]}) )
+            targets=`unalias ls >/dev/null 2>&1; ls ${TEMPLATE_DIR}`
+            COMPREPLY=($(compgen -W "${targets}" ${COMP_WORDS[COMP_CWORD]}))
             ;;
     esac
 }

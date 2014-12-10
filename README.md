@@ -14,17 +14,14 @@ Install
 ```
 git clone https://github.com/amiq11/template.git
 ```
-
 2. Copy your template into the directory you cloned
 ```
 cp -r yourtemplate path/to/template
 ```
-
 3. Install
 ```
 sudo make install
 ```
-
 4. (Only for zsh users) Add completion settings
 ```
 mkdir ~/.zsh.d
