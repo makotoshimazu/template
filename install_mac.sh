@@ -12,9 +12,9 @@ COMPLETIONFILE="completion.sh"
 
 bindir="${PREFIX}/bin"
 templatedir="${PREFIX}/share/${INSTALLFILE}"
-completiondir="/etc/bash_completion.d"
-temp_install=`tempfile`
-temp_comp=`tempfile`
+completiondir="/usr/local/etc/bash_completion.d"
+temp_install=/tmp/y
+temp_comp=/tmp/x
 
 sed -e "s%TEMPLATEDIR%${templatedir}%" $INSTALLFILE > $temp_install
 sed -e "s%TEMPLATEDIR%${templatedir}%" $COMPLETIONFILE > $temp_comp
