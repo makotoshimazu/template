@@ -15,8 +15,12 @@
 \newcommand{\templatetitle}{sample}
 \newcommand{\templateauthor}{yourname}
 
+\newcommand\figref[1]{Figure ~\ref{#1}}
+\newcommand\tblref[1]{Table ~\ref{#1}}
+\newcommand\lstref[1]{List ~\ref{#1}}
+
 % 画像基本
-\usepackage[dvipdfm]{graphicx,color}
+\usepackage[dvipdfmx]{graphicx,color}
 
 % 図をまわりこんだ文章を書きたいとき
 %\usepackage{wrapfig}
@@ -87,7 +91,6 @@
 
 % プログラムのソースをlistingsをつかって書く
 \usepackage{listings,jlisting}
-\usepackage[dvipdfm]{color}
 \renewcommand{\lstlistingname}{list}
 % \lstset{%
 % language={C},
@@ -167,24 +170,29 @@
 % 
 
 % listingサンプル
-% \lstinputlisting[caption=fuga,label=lst:fuga]{./source/fuga.c}
+% \lstinputlisting[caption=fuga,label=lst:fuga]{./sources/fuga.c}
 
 % figureサンプル
 % \begin{figure}[H]
-% \begin{minipage}{0.5\hsize}
-%  \begin{center}
-%  \includegraphics[scale=1.0]{./figures/hoge1.eps}
-%  \caption{hoge1}
-%  \label{fig:hoge1}
-% \end{center}
-% \end{minipage}
-% \begin{minipage}{0.5\hsize}
-%  \begin{center}
-%  \includegraphics[scale=1.0]{./figures/hoge2.eps}
-%  \caption{hoge2}
-%  \label{fig:hoge2}
-% \end{center}
-% \end{minipage}
+%   \begin{minipage}{0.5\hsize}
+%     \centering
+%     \includegraphics[width=7.0cm]{./figures/hoge1.eps}
+%     \caption{hoge1}
+%     \label{fig:hoge1}
+%   \end{minipage}
+%   \begin{minipage}{0.5\hsize}
+%     \centering
+%     \includegraphics[width=7.0cm]{./figures/hoge2.eps}
+%     \caption{hoge2}
+%     \label{fig:hoge2}
+%   \end{minipage}
+% \end{figure}
+
+% \begin{figure}[H]
+% \centering
+%   \includegraphics[width=8.0cm]{./figures/hoge2.eps}
+%   \caption{hoge2}
+%   \label{fig:hoge2}
 % \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
