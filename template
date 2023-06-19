@@ -10,7 +10,8 @@ VERSION="1.0"
 function usage () {
     echo "Usage:  $0 [-d templatedir] [-f targetdir] [-h] [-v] template" >&2
     echo -n "template: "
-    echo `ls -F $templatedir | grep / | sed -e 's/\///'`
+    find $templatedir -maxdepth 1 -mindepth 1 -type d | sed -e "s%${templatedir}/%%" | tr '\n' ' '
+    echo
 }
 
 function version () {
